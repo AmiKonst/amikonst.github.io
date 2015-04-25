@@ -61,12 +61,12 @@
 
             });
             $('.box-items .item').hover(function() {
-                // var arr = $(this).attr('id').split("_");
-                // $('.box-items .item').removeClass('cloture-hover');
-                // if (arr[0] > 0) {$('.box-items #' + (parseInt(arr[0])-1)  + '_' + arr[1]).addClass('cloture-hover');}
-                // if (arr[0] < 31) {$('.box-items #' + (parseInt(arr[0]) +1)  + '_' + arr[1]).addClass('cloture-hover');}
-                // if (arr[1] > 0) {$('.box-items #' + arr[0] + '_' + (parseInt(arr[1])-1) ).addClass('cloture-hover');}
-                // if (arr[1] < 31) {$('.box-items #' + arr[0] + '_' + (parseInt(arr[1])+1)) .addClass('cloture-hover');}
+                var arr = $(this).attr('id').split("_");
+                $('.box-items .item').removeClass('cloture-hover');
+                if (arr[0] > 0) {$('.box-items #' + (parseInt(arr[0])-1)  + '_' + arr[1]).addClass('cloture-hover');}
+                if (arr[0] < 31) {$('.box-items #' + (parseInt(arr[0]) +1)  + '_' + arr[1]).addClass('cloture-hover');}
+                if (arr[1] > 0) {$('.box-items #' + arr[0] + '_' + (parseInt(arr[1])-1) ).addClass('cloture-hover');}
+                if (arr[1] < 31) {$('.box-items #' + arr[0] + '_' + (parseInt(arr[1])+1)) .addClass('cloture-hover');}
                 // console.log($(this))
             })
 
