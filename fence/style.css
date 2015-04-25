@@ -1,0 +1,93 @@
+.hide {
+  display: none;
+}
+.content {
+  margin: 0 auto;
+  display: table;
+}
+.clear {
+  clear: both;
+}
+.you-win,
+.hello-div {
+  background-color: rgba(204, 204, 204, 0.34);
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+}
+.you-win .start-button,
+.hello-div .start-button {
+  font-weight: bold;
+  background: #8f7a66;
+  border-radius: 3px;
+  padding: 0 20px;
+  text-decoration: none;
+  color: #f9f6f2;
+  height: 40px;
+  line-height: 42px;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 27px;
+  width: 160px;
+  margin: 0 auto;
+}
+.you-win h1,
+.hello-div h1 {
+  color: #776e65;
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 80px;
+  font-weight: bold;
+  margin: 0 auto;
+  display: table;
+  margin-top: 255px;
+}
+.you-win h1 {
+  color: #FFFFFF;
+}
+.hello-div span {
+  margin: 0 auto;
+  display: table;
+  color: #776e65;
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 60px;
+}
+.you-win {
+  background-color: rgba(71, 248, 85, 0.52);
+}
+.box-items {
+  position: relative;
+}
+.box-items .item {
+  cursor: pointer;
+  float: left;
+  width: 20px;
+  height: 20px;
+  background-color: #ffa;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #fff;
+}
+.box-items .item.active {
+  background-color: #d2b48c;
+}
+.box-items .item:hover {
+  background-color: #c7b139;
+}
+.box-items .item.cloture {
+  border-color: #B1B1B1;
+}
+.box-items .item.cloture-hover {
+  border-color: #000;
+}
+@font-face {
+  font-family: PoiretOne;
+  src: url(PoiretOne-Regular.ttf);
+}
+.clear {
+  clear: both;
+}
+/*# sourceMappingURL=style.css.map */

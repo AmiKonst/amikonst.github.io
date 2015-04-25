@@ -1,265 +1,100 @@
 <!DOCTYPE html PUBLIC>
 <html>
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" src="jquery/1.10.2/jquery-1.10.2.min.js" ></script>
-	<title>fence</title>
+    <title>fence</title>
 </head>
 <body>
-	<style type="text/css">
-		.hide {
-			display: none;
-		}
-		.content {
-			margin: 0 auto;
-			display: table;
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-		}
-		.clear {
-			clear: both;
-		}
-		.you-win,
-		.hello-div {
-			background-color: rgba(204, 204, 204, 0.34);
-			height: 100%;
-			position: absolute;
-			z-index: 2;
-			width: 100%;
-		}
-		.you-win {
-		}
-			.you-win .start-button,
-			.hello-div .start-button {
-				font-weight: bold;
-				background: #8f7a66;
-				border-radius: 3px;
-				padding: 0 20px;
-				text-decoration: none;
-				color: #f9f6f2;
-				height: 40px;
-				line-height: 42px;
-				cursor: pointer;
-				display: block;
-				text-align: center;
-				font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
-				font-size: 27px;
-				width: 160px;
-				margin: 0 auto;
-			}
-			
+      ga('create', 'UA-49970290-1', 'amikonst.github.io');
+      ga('send', 'pageview');
+    </script>
+    
+    <script type="text/javascript">
+        $( document ).ready(function() {
+            for (k=0; k<31; k++) {
+                for (kk=0; kk<31; kk++) {
+                    if ((kk+k == 15)|| ( (k-1== kk%16)&&(kk>15))|| ( (kk-1== k%16)&&(k>15) )|| ( (kk%16 + k%16 ==13)&&(k>15) &&(kk>15))) {
+                        $(".box-items").append("<span class='item cloture active' id=" + k +"_" + kk + "><span>");
+                    } else {
+                        $(".box-items").append("<span class='item' id=" + k +"_" + kk + "><span>");
+                    }
+                };
+                $(".box-items").append("<div class='clear'><div>");
+            };
+            $( ".box-items .item" ).click(function() {
+                $(this).toggleClass('active');
 
-			.you-win h1,
-			.hello-div h1 {
-				color: #776e65;
-				font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
-				font-size: 80px;
-				font-weight: bold;
-				margin: 0 auto;
-				display: table;
-				margin-top: 255px;
-			}
-			.you-win h1{
-				color: #FFFFFF;
-			}
-			.hello-div span {
-				margin: 0 auto;
-				display: table;
-				color: #776e65;
-				font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
-				font-size: 18px;
-				line-height: 60px;
-			}
-
-		.you-win {
-			background-color: rgba(71, 248, 85, 0.52);
-		}
-		.box-items {
-			position: relative;
-		}
-
-			.box-items .item {
-				cursor: pointer;
-				float: left;
-				width: 20px;
-				height: 20px;
-				background-color: #ffa;
-				border-style: solid;
-				border-width: 1px;
-				border-color: #fff;  
-			}
-			
-			.box-items .item.active {
-				background-color: #d2b48c;
-			}
-			.box-items .item:hover {
-				background-color: #c7b139;
-			}
-			.box-items .item.cloture {
-				border-color: #B1B1B1;  
-			}
-			.box-items .item.cloture-hover {
-				border-color: #000;  
-			}
-	</style>
-	<style type="text/css">
-		@font-face {
-			font-family: PoiretOne;
-			src: url(PoiretOne-Regular.ttf);
-		}
-
-		.clear {
-			clear: both;
-		}
-		.jelirai {
-			background-color: #F5F9FF;
-			padding-top: 19px;
-			border-style: solid;
-			border-width: 1px;
-			border-color: #ccc;
-			cursor: pointer !important;
-			position: absolute;
-			z-index: 3;
-			right: 2px;
-			width: 170px;
-			opacity: 0.15;
-		}
-		.jelirai:hover {
-			opacity: 1;
-			border-style: solid;
-			border-width: 1px;
-			border-color: #003153; 
-		}
-			.jelirai a {
-				text-decoration: none;
-			}
-			.jelirai div {
-				text-align: center;
-			}
-				.jelirai .img-preview img{
-					max-width: 90px;
-				}
-			.jelirai .description {
-				cursor: pointer !important;
-				text-align: center;
-				font-family:PoiretOne;
-				color: #4a4a65;
-			}
-
-				.jelirai .description label{
-					cursor: pointer !important;
-					color: #4a4a65;
-					font-size: 28px;
-					margin-top: 52px;
-					display: block;
-				}
-			.jelirai h2 {
-				cursor: pointer !important;
-				color: #000;
-				margin-top: 40px;
-				margin-bottom: 14px;
-				font-family:PoiretOne;
-			}
-	</style>
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-	  ga('create', 'UA-49970290-1', 'amikonst.github.io');
-	  ga('send', 'pageview');
-
-	</script>
-	<script type="text/javascript">
-		$( document ).ready(function() {
-			for (k=0; k<31; k++) {
-				for (kk=0; kk<31; kk++) {
-					if ((kk+k == 15)|| ( (k-1== kk%16)&&(kk>15))|| ( (kk-1== k%16)&&(k>15) )|| ( (kk%16 + k%16 ==13)&&(k>15) &&(kk>15))) {
-						$(".box-items").append("<span class='item cloture active' id=" + k +"_" + kk + "><span>");
-					} else {
-						$(".box-items").append("<span class='item' id=" + k +"_" + kk + "><span>");
-					}
-				};
-				$(".box-items").append("<div class='clear'><div>");
-			};
-			$( ".box-items .item" ).click(function() {
-				$(this).toggleClass('active');
-
-				var arr = $(this).attr('id').split("_");
-				if (arr[0] > 0) {$('.box-items #' + (parseInt(arr[0])-1)  + '_' + arr[1]).toggleClass('active');}
-				if (arr[0] < 31) {$('.box-items #' + (parseInt(arr[0]) +1)  + '_' + arr[1]).toggleClass('active');}
-				if (arr[1] > 0) {$('.box-items #' + arr[0] + '_' + (parseInt(arr[1])-1) ).toggleClass('active');}
-				if (arr[1] < 31) {$('.box-items #' + arr[0] + '_' + (parseInt(arr[1])+1)) .toggleClass('active');}
+                var arr = $(this).attr('id').split("_");
+                if (arr[0] > 0) {$('.box-items #' + (parseInt(arr[0])-1)  + '_' + arr[1]).toggleClass('active');}
+                if (arr[0] < 31) {$('.box-items #' + (parseInt(arr[0]) +1)  + '_' + arr[1]).toggleClass('active');}
+                if (arr[1] > 0) {$('.box-items #' + arr[0] + '_' + (parseInt(arr[1])-1) ).toggleClass('active');}
+                if (arr[1] < 31) {$('.box-items #' + arr[0] + '_' + (parseInt(arr[1])+1)) .toggleClass('active');}
 
 
-				var flag = true;
+                var flag = true;
 
-				for (k=0; k<31; k++) {
-					for (kk=0; kk<31; kk++) {
-					if ((kk+k == 15)|| ( (k-1== kk%16)&&(kk>15))|| ( (kk-1== k%16)&&(k>15) )|| ( (kk%16 + k%16 ==13)&&(k>15) &&(kk>15))) {
-						if (!$(".box-items #" + k +"_" + kk).hasClass('active')){
-							flag=false;
-						};
-					}
-				};
-				$(".box-items").append("<div class='clear'><div>");
-			};
+                for (k=0; k<31; k++) {
+                    for (kk=0; kk<31; kk++) {
+                    if ((kk+k == 15)|| ( (k-1== kk%16)&&(kk>15))|| ( (kk-1== k%16)&&(k>15) )|| ( (kk%16 + k%16 ==13)&&(k>15) &&(kk>15))) {
+                        if (!$(".box-items #" + k +"_" + kk).hasClass('active')){
+                            flag=false;
+                        };
+                    }
+                };
+                $(".box-items").append("<div class='clear'><div>");
+            };
 
-				if ((flag)&&($('.box-items .item.active').length == 60)){
-					$('.you-win').fadeIn();
-				}
-
-
-			});
-			$('.box-items .item').hover(function() {
-				// var arr = $(this).attr('id').split("_");
-				// $('.box-items .item').removeClass('cloture-hover');
-				// if (arr[0] > 0) {$('.box-items #' + (parseInt(arr[0])-1)  + '_' + arr[1]).addClass('cloture-hover');}
-				// if (arr[0] < 31) {$('.box-items #' + (parseInt(arr[0]) +1)  + '_' + arr[1]).addClass('cloture-hover');}
-				// if (arr[1] > 0) {$('.box-items #' + arr[0] + '_' + (parseInt(arr[1])-1) ).addClass('cloture-hover');}
-				// if (arr[1] < 31) {$('.box-items #' + arr[0] + '_' + (parseInt(arr[1])+1)) .addClass('cloture-hover');}
-				// console.log($(this))
-			})
+            if ((flag)&&($('.box-items .item.active').length == 60)){
+                $('.you-win').fadeIn();
+            }
 
 
-		});
+            });
+            $('.box-items .item').hover(function() {
+                // var arr = $(this).attr('id').split("_");
+                // $('.box-items .item').removeClass('cloture-hover');
+                // if (arr[0] > 0) {$('.box-items #' + (parseInt(arr[0])-1)  + '_' + arr[1]).addClass('cloture-hover');}
+                // if (arr[0] < 31) {$('.box-items #' + (parseInt(arr[0]) +1)  + '_' + arr[1]).addClass('cloture-hover');}
+                // if (arr[1] > 0) {$('.box-items #' + arr[0] + '_' + (parseInt(arr[1])-1) ).addClass('cloture-hover');}
+                // if (arr[1] < 31) {$('.box-items #' + arr[0] + '_' + (parseInt(arr[1])+1)) .addClass('cloture-hover');}
+                // console.log($(this))
+            })
+
+
+        });
 
 
 
-	</script>
+    </script>
 
 
 
-	<div class="content">
+    <div class="content">
+        <div class="box-items ">
+            <div class="hello-div ">
+                <h1>fence</h1>
+                <a href="javascript:;" class="start-button" onclick="$('.box-items .item').removeClass('active');$('.hello-div').fadeOut();">New Game</a>
 
-		<div class="jelirai" style="display: none;">
-			<a target="_blank" href="http://jelirai.com/#fence">
-				<div class="img-preview">
-					<img alt="jelirai.com - литературный микроблог со свободной публикацией" src="favicon-jelirai.ico">
-				</div>
-				<div class="clear"></div>
-				<div>
-					<h2>JeLirai.com</h2>
-				</div>
-			</a>
-		</div>
-
-		<div class="box-items ">
-		<div class="hello-div ">
-			<h1>fence</h1>
-			<a href="javascript:;" class="start-button" onclick="$('.box-items .item').removeClass('active');$('.hello-div').fadeOut();">New Game</a>
-
-			<span>Build a fence, like the one pictured from behind!</span>
-		</div>
-		<div class="you-win hide">
-			<h1>You win!</h1>
-			<a href="javascript:;" class="start-button" onclick="$('.box-items .item').removeClass('active');$('.you-win').fadeOut();">Try again</a>
-		</div>
-			
-		</div>
-		<div class='clear'><div>
-	</div>
+                <span>Build a fence, like the one pictured from behind!</span>
+            </div>
+            <div class="you-win hide">
+                <h1>You win!</h1>
+                <a href="javascript:;" class="start-button" onclick="$('.box-items .item').removeClass('active');$('.you-win').fadeOut();">Try again</a>
+            </div>
+            
+        </div>
+        <div class='clear'><div>
+    </div>
 </body>
 
 </html>
