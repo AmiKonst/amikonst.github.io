@@ -25,29 +25,6 @@
         <script src="fence.js" type="text/javascript" charset="utf-8"></script>
         <!-- / -->
 
-        <!-- PLUSO -->
-        <script type="text/javascript">
-            (function() {
-                if (window.pluso)
-                    if (typeof window.pluso.start == "function") return;
-                
-                if (window.ifpluso == undefined) {
-                    window.ifpluso = 1;
-                    var d = document, 
-                        s = d.createElement('script'), 
-                        g = 'getElementsByTagName';
-                    s.type = 'text/javascript'; 
-                    s.charset='UTF-8'; 
-                    s.async = true;
-                    s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
-                    var h = d[g]('body')[0];
-                    h.appendChild(s);
-                }
-            })();
-        </script>
-        <!-- / -->
-
-
         <div class="content">
             <div class="box-items">
                 <div class="hello-div ">
@@ -60,6 +37,8 @@
                     <h1>You win!</h1>
                     <a href="javascript:;" class="start-button">Try again</a>
                 </div>
+
+                <div class="line-container"></div>
                 
             </div>
             <div class='clear'><div>
