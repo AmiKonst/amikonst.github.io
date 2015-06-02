@@ -21,7 +21,7 @@
   font-weight: bold;
   background: #8f7a66;
   border-radius: 3px;
-  padding: 0 20px;
+  padding: 0 1em;
   text-decoration: none;
   color: #f9f6f2;
   height: 40px;
@@ -50,6 +50,8 @@
 .hello-div span {
   margin: 0 auto;
   display: table;
+  min-width: 18px;
+  min-height: 18px;
   color: #776e65;
   font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 18px;
@@ -64,8 +66,8 @@
 .box-items .item {
   cursor: pointer;
   float: left;
-  width: 20px;
-  height: 20px;
+  width: 1em;
+  height: 1em;
   background-color: #ffa;
   border-style: solid;
   border-width: 1px;
@@ -77,6 +79,26 @@
 .box-items .item.cloture {
   border-color: #B1B1B1;
   background-color: #F9F1F1;
+}
+.box-items .item.center {
+  position: relative;
+}
+.box-items .item.center:before {
+  background: #56CB3C;
+  content: "";
+  display: block;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  box-shadow: 0px 0px 28px 10px #2C8B26;
+  height: 1em;
+  border-radius: 11px;
+}
+.box-items .item.center.active:before {
+  box-shadow: 0px 0px 28px 10px #FF5757;
+  background: #FF2525;
 }
 .box-items .item.active {
   background-color: #d2b48c;
@@ -92,5 +114,22 @@
   clear: both;
 }
 .line {
-  height: 22px;
+  height: 1em;
+  min-width: 630px;
+  display: inline-block;
+  margin: 0 auto;
 }
+.line-container {
+  text-align: center;
+}
+@media (min-width: 600px) {
+  body .line {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1200px) {
+  body .line {
+    font-size: 19px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

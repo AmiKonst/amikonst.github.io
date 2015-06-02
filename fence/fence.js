@@ -50,20 +50,20 @@ $( document ).ready(function() {
             }
         };
     };
-
+    $(".box-items").find('.line:nth-child(18) .item:nth-child(18)').addClass('center')
     $( ".box-items .item" ).click(function() {
-        var id = $(this).index();
-        var parent_id = $(this).parent().index();
+        // var id = $(this).index();
+        // var parent_id = $(this).parent().index();
 
-        if (id > 0)
-            $(this).parent().find('.item:nth-child(' + (id) + ')').toggleClass('active');
-        if (id < w - 1)
-            $(this).parent().find('.item:nth-child(' + (id + 2) + ')').toggleClass('active');
-        if (parent_id > 0)
-            $(this).closest('.line-container').find('.line:nth-child(' + (parent_id) + ') .item:nth-child(' + (id + 1) + ')').toggleClass('active');
-        if (parent_id < w - 1)
-            $(this).closest('.line-container').find('.line:nth-child(' + (parent_id + 2) + ') .item:nth-child(' + (id + 1) + ')').toggleClass('active');
-
+        // if (id > 0)
+        //     $(this).parent().find('.item:nth-child(' + (id) + ')').toggleClass('active');
+        // if (id < w - 1)
+        //     $(this).parent().find('.item:nth-child(' + (id + 2) + ')').toggleClass('active');
+        // if (parent_id > 0)
+        //     $(this).closest('.line-container').find('.line:nth-child(' + (parent_id) + ') .item:nth-child(' + (id + 1) + ')').toggleClass('active');
+        // if (parent_id < w - 1)
+        //     $(this).closest('.line-container').find('.line:nth-child(' + (parent_id + 2) + ') .item:nth-child(' + (id + 1) + ')').toggleClass('active');
+        $('.cloture-hover').toggleClass('active');
         $(this).toggleClass('active');
 
 
@@ -77,16 +77,17 @@ $( document ).ready(function() {
 
 
     $('.box-items .item').hover(function() {
+        $('.box-items .item').removeClass('cloture-hover');
         var id = $(this).index();
         var parent_id = $(this).parent().index();
 
-        if (id > 0)
+        if ((id > 0) && (($('.item.center.active').length == 0) || (Math.random() > 0.5)))
             $(this).parent().find('.item:nth-child(' + (id) + ')').toggleClass('cloture-hover');
-        if (id < w - 1)
+        if ((id < w - 1) && (($('.item.center.active').length == 0) || (Math.random() > 0.5)))
             $(this).parent().find('.item:nth-child(' + (id + 2) + ')').toggleClass('cloture-hover');
-        if (parent_id > 0)
+        if ((parent_id > 0) && (($('.item.center.active').length == 0) || (Math.random() > 0.5)))
             $(this).closest('.line-container').find('.line:nth-child(' + (parent_id) + ') .item:nth-child(' + (id + 1) + ')').toggleClass('cloture-hover');
-        if (parent_id < w - 1)
+        if ((parent_id < w - 1) && (($('.item.center.active').length == 0) || (Math.random() > 0.5)))
             $(this).closest('.line-container').find('.line:nth-child(' + (parent_id + 2) + ') .item:nth-child(' + (id + 1) + ')').toggleClass('cloture-hover');
     })
 
