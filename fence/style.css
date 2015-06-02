@@ -116,7 +116,6 @@
 .line {
   height: 1em;
   min-width: 630px;
-  display: inline-block;
   margin: 0 auto;
 }
 .line-container {
