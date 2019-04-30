@@ -1,5 +1,5 @@
 // инициализация вк
-VK.init(, function() { 
+VK.init(function() { 
      console.log('Init successful');
   }, function() { 
      console.log('Error init');
